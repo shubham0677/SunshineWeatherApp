@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.developer.shubham.sunshine.sync.SunshineSyncAdapter;
+
 public class MainActivity extends AppCompatActivity implements ForecastFragment.Callback {
 
     private boolean mTwoPane;
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
         }
         ForecastFragment ff = (ForecastFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_forecast);
         ff.setUseTodayLayout(!mTwoPane);
+
+        SunshineSyncAdapter.initializeSyncAdapter(this);
     }
 
     @Override
@@ -58,30 +62,8 @@ public class MainActivity extends AppCompatActivity implements ForecastFragment.
             startActivity(intent);
             return true;
         }
-        else if(id == R.id.action_map){
-            openPrefferedLocationinMap();
-            return true;
-        }
+
         return super.onOptionsItemSelected(item);
-    }
-
-    private void openPrefferedLocationinMap() {
-        //SharedPreferences pref= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        //String loc=pref.getString(getString(R.string.pref_location_key),getString(R.string.pref_location_default));
-        String loc = Utility.getPreferredLocation(this);
-
-        Uri geoLocation = Uri.parse("geo:0,0?").buildUpon()
-                .appendQueryParameter("q",loc)
-                .build();
-
-        Intent i=new Intent(Intent.ACTION_VIEW);
-        i.setData(geoLocation);
-        if(i.resolveActivity(getPackageManager())!=null) {
-            startActivity(i);
-        }
-        else {
-            Log.d(this.getClass().getSimpleName(),"Couldn't call "+ loc + ", no recieving apps installed");
-        }
     }
 
     @Override
