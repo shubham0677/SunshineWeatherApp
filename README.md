@@ -1,7 +1,7 @@
 # SunshineWeatherApp
 Sunshine Weather App shows weather data according to location using OpenWeatherMap API. This app was developed while pursuing 'Developing Android Apps' course on Udacity.
 
-##Features
+## Features
 
 -> Optimized for tablets.
 
@@ -12,16 +12,14 @@ Sunshine Weather App shows weather data according to location using OpenWeatherM
 -> Utilizes sync adapter to update database.
 
 
-##API Key required
+## API Key required
 
 This app requires OpenWeatherMap API key to fetch data from the server. 
 
 Get your API key by signing up on http://openweathermap.org, then paste it in gradle.properties file as the value of MyOpenWeatherMapApiKey inside the double quotes.
 
-##Screens
+## Screens
 
-![alt tag] (https://github.com/shubham0677/SunshineWeatherApp/blob/master/screenshots/Screenshot_20160823-135257.png)
-
-![alt tag] (https://github.com/shubham0677/SunshineWeatherApp/blob/master/screenshots/Screenshot_20160823-135325.png)
-
-![alt tag] (https://github.com/shubham0677/SunshineWeatherApp/blob/master/screenshots/Screenshot_20160823-135320.png)
+<img src="https://github.com/shubham0677/SunshineWeatherApp/blob/master/screenshots/Screenshot_20160823-135257.png" alt="Sunshine app screenshot 1">
+<img src="https://github.com/shubham0677/SunshineWeatherApp/blob/master/screenshots/Screenshot_20160823-135325.png" alt="Sunshine app screenshot 2">
+<img src="https://github.com/shubham0677/SunshineWeatherApp/blob/master/screenshots/Screenshot_20160823-135320.png" alt="Sunshine app screenshot 3">
